@@ -66,7 +66,39 @@ else
    echo "Character is X"
 fi
 
+rm -r "test.txt"
+rm "MyFolder"
 
+
+#File Test operator
+
+touch "test.txt"
+# ! \c keeps the cursor in same line. & -e is required for this to happen.
+echo -e "Enter File Name : \c"
+read file_name
+
+if [ -e $file_name ]
+then
+    echo "$file_name Found"
+else
+    echo "$file_name Not Found"
+fi
+
+mkdir "MyFolder"
+# ! \c keeps the cursor in same line. & -e is required for this to happen.
+echo -e "Enter Directory Name : \c"
+read dir_name
+
+if [ -d $dir_name ]
+then
+    echo "$dir_name Found"
+else
+    echo "$dir_name Not Found"
+fi
+
+# ! Deleted them
+rm "test.txt"
+rm "MyFolder"
 
 
 
